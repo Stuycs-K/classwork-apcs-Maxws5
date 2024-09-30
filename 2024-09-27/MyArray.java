@@ -8,9 +8,13 @@ public class MyArray{
     System.out.println("This should output []: outputs " + aryToString(new int[] {}));
     System.out.println("\nTHIS IS TESTS FOR returnCopy:");
     System.out.println("This should output [1, 2, 3, 5, 4]: outputs" + aryToString(new int[] {returnCopy(new int[] {1,2,3,5,4})}));
+    System.out.println("This should output false: outputs" + (new int[] {1,2,3,5,4} == returnCopy(new int[] {1,2,3,5,4})));
     System.out.println("This should output [0]: outputs" + aryToString(new int[] {returnCopy(new int[] {0})}));
+    System.out.println("This should output false: outputs" + (new int[] {0} == returnCopy(new int[] {0})));
     System.out.println("This should output []: outputs" + aryToString(new int[] {returnCopy(new int[] {})}));
+    System.out.println("This should output false: outputs" + (new int[] {} == returnCopy(new int[] {})));
     System.out.println("This should output [-1, -2, 3]: outputs" + aryToString(new int[] {returnCopy(new int[] {-1,-2,3})}));
+    System.out.println("This should output false: outputs" + (new int[] {-1,-2,-3} == returnCopy(new int[] {-1,-2,3})));
     System.out.println("\nTHIS IS TESTS FOR concatArray:");
     System.out.println("This should output [1, 2, 3, 2, 3, 4]: outputs" + aryToString(new int[] {concatArray(new int[] {1,2,3},new int[] {2,3,4})}));
     System.out.println("This should output [-1, 2, -3, 2, 3, -4]: outputs" + aryToString(new int[] {concatArray(new int[] {-1,2,-3},new int[] {2,3,-4})}));
