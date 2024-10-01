@@ -81,6 +81,25 @@ public class ArrayMethods {
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
     public static int[][] swapRC(int[][]nums){
+      int row = nums.length;
+      int column = nums[0].length;
+      int[][] result = new int[column][row];
+      for (int i =0)
       return new int[1][1];
+    }
+    //3. Modify a given 2D array of integer as follows:
+    //Replace all the negative values:
+    //-When the row number is the same as the column number replace
+    //that negative with the value 1
+    //-All other negatives replace with 0
+    public static void replaceNegative(int[][] vals){ }
+
+    //4. Make a copy of the given 2d array.
+    //When testing : make sure that changing the original does NOT change the copy.
+    //DO NOT use any built in methods that "copy" an array.
+    //You SHOULD write a helper method for this.
+    //If you don't see a good way to do that, you should stop and look at prior methods.
+    public static int[][] copy(int[][] nums){
+      return null;//placeholder so it compiles
     }
 }
