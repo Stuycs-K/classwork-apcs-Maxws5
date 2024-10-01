@@ -26,7 +26,7 @@ public class ArrayMethods {
     System.out.println("Expected output 0 \n actual output; "+ arr2DSum(r));
   }
 
-  public static String aryToString(int[] nums)
+  public static String arrToString(int[] nums)
   {
     String res = "[";
     for (int i = 0; i < nums.length;i++)
@@ -54,10 +54,10 @@ public class ArrayMethods {
       for (int i=0; i < ary.length; i++)
       {
         if (i < ary.length - 1) {
-          res += aryToString(ary[i]) + ", ";
+          res += arrToString(ary[i]) + ", ";
         }
         else {
-          res += aryToString(ary[i]) + "]";
+          res += arrToString(ary[i]) + "]";
         }
       }
       return res;
