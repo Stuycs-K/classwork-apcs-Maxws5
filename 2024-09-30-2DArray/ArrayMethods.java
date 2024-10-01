@@ -8,16 +8,16 @@ public class ArrayMethods {
   * Note the comma+space between values, and between values
   */
   public static void main (String[] args) {
-    int[][] r = new int[][]{{2,3,4},{5,6,7},{2,4,9}};
-    System.out.println("Expected output [[2, 3, 4], [5, 6, 7], [2, 4, 9]]\n actual output; " + arrToString(r));
+    int[][] r = new int[][]{{2,3,4},{5,6,7,5,5},{2,4,9}};
+    System.out.println("Expected output [[2, 3, 4], [5, 6, 7, 5, 5], [2, 4, 9]]\n actual output; " + arrToString(r));
     r = new int[][]{{},{},{},{}};
     System.out.println("Expected output [[], [], [], []]\n actual output; "+ arrToString(r));
     r = new int[][]{{-2,-3,-4},{5,6,7}};
     System.out.println("Expected output [[-2, -3, -4], [5, 6, 7]]\n actual output; "+ arrToString(r));
     r = new int[][]{{0}};
     System.out.println("Expected output [[0]]\n actual output; "+ arrToString(r));
-    r = new int[][]{{2,3,4},{5,6,7},{2,4,9}};
-    System.out.println("Expected output: 42 \n actual output; " + arr2DSum(r));
+    r = new int[][]{{2,3,4},{5,6,7},{2,4}};
+    System.out.println("Expected output: 33 \n actual output; " + arr2DSum(r));
     r = new int[][]{{},{},{},{}};
     System.out.println("Expected output 0 \n actual output; "+ arr2DSum(r));
     r = new int[][]{{-2,-3,-4},{5,6,7}};
