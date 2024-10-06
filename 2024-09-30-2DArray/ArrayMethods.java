@@ -24,6 +24,14 @@ public class ArrayMethods {
     System.out.println("Expected output 9 \n actual output; "+ arr2DSum(r));
     r = new int[][]{{0}};
     System.out.println("Expected output 0 \n actual output; "+ arr2DSum(r));
+    r = new int[][]{{-1,-2,-3},{1,2,3}};
+    System.out.println("Expected output [[-1, 1], [-2, 2], [-3, 3]] \n actual output; "+ arrToString(swapRC(r)));
+    r = new int[][]{{0,1},{-2,-1}};
+    System.out.println("Expected output [[0, -2], [1, -1]] \n actual output; "+ arrToString(swapRC(r)));
+    r = new int[][]{{1,2,3,4,5}};
+    System.out.println("Expected output [[1], [2], [3], [4], [5]] \n actual output; "+ arrToString(swapRC(r)));
+    r = new int[][]{{1},{2},{3},{4},{5}};
+    System.out.println("Expected output [[1, 2, 3, 4, 5]] \n actual output; "+ arrToString(swapRC(r)));
   }
 
   public static String arrToString(int[] nums)
@@ -84,8 +92,14 @@ public class ArrayMethods {
       int row = nums.length;
       int column = nums[0].length;
       int[][] result = new int[column][row];
-      for (int i =0)
-      return new int[1][1];
+      for (int i =0; i<column; i++)
+      {
+        for (int t =0; t<row; t++)
+        {
+          result[i][t]=nums[t][i];
+        }
+      }
+      return result;
     }
     //3. Modify a given 2D array of integer as follows:
     //Replace all the negative values:
