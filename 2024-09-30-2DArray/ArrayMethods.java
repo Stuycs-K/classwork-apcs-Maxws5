@@ -12,26 +12,41 @@ public class ArrayMethods {
     System.out.println("Expected output [[2, 3, 4], [5, 6, 7, 5, 5], [2, 4, 9]]\n actual output; " + arrToString(r));
     r = new int[][]{{},{},{},{}};
     System.out.println("Expected output [[], [], [], []]\n actual output; "+ arrToString(r));
-    r = new int[][]{{-2,-3,-4},{5,6,7}};
-    System.out.println("Expected output [[-2, -3, -4], [5, 6, 7]]\n actual output; "+ arrToString(r));
+    r = new int[][]{{-2,-30,-4},{5,6,7}};
+    System.out.println("Expected output [[-2, -30, -4], [5, 6, 7]]\n actual output; "+ arrToString(r));
     r = new int[][]{{0}};
     System.out.println("Expected output [[0]]\n actual output; "+ arrToString(r));
     r = new int[][]{{2,3,4},{5,6,7},{2,4}};
     System.out.println("Expected output: 33 \n actual output; " + arr2DSum(r));
     r = new int[][]{{},{},{},{}};
     System.out.println("Expected output 0 \n actual output; "+ arr2DSum(r));
-    r = new int[][]{{-2,-3,-4},{5,6,7}};
-    System.out.println("Expected output 9 \n actual output; "+ arr2DSum(r));
+    r = new int[][]{{-2,-3,-4},{50,6,7}};
+    System.out.println("Expected output 54 \n actual output; "+ arr2DSum(r));
     r = new int[][]{{0}};
     System.out.println("Expected output 0 \n actual output; "+ arr2DSum(r));
     r = new int[][]{{-1,-2,-3},{1,2,3}};
     System.out.println("Expected output [[-1, 1], [-2, 2], [-3, 3]] \n actual output; "+ arrToString(swapRC(r)));
-    r = new int[][]{{0,1},{-2,-1}};
-    System.out.println("Expected output [[0, -2], [1, -1]] \n actual output; "+ arrToString(swapRC(r)));
-    r = new int[][]{{1,2,3,4,5}};
-    System.out.println("Expected output [[1], [2], [3], [4], [5]] \n actual output; "+ arrToString(swapRC(r)));
-    r = new int[][]{{1},{2},{3},{4},{5}};
-    System.out.println("Expected output [[1, 2, 3, 4, 5]] \n actual output; "+ arrToString(swapRC(r)));
+    r = new int[][]{{0,1},{-20,-1}};
+    System.out.println("Expected output [[0, -20], [1, -1]] \n actual output; "+ arrToString(swapRC(r)));
+    r = new int[][]{{1,2,3,40,5}};
+    System.out.println("Expected output [[1], [2], [3], [40], [5]] \n actual output; "+ arrToString(swapRC(r)));
+    r = new int[][]{{1},{2},{3},{4},{50}};
+    System.out.println("Expected output [[1, 2, 3, 4, 50]] \n actual output; "+ arrToString(swapRC(r)));
+    r = new int[][]{{},{},{},{}};
+    replaceNegative(r);
+    System.out.println("Expected output [[], [], [], []]\n actual output; "+ arrToString(r));
+    r = new int[][]{{-1},{-1,-2},{-1,-2,-3},{-1,-2,-3,-4}};
+    replaceNegative(r);
+    System.out.println("Expected output [[1], [0, 1], [0, 0, 1], [0, 0, 0, 1]]\n actual output; "+ arrToString(r));
+    r = new int[][]{{},{},{},{}};
+    replaceNegative(r);
+    System.out.println("Expected output [[], [], [], []]\n actual output; "+ arrToString(r));
+    r = new int[][]{{2},{-1,2},{-1,2,3},{1,-1,2,-3}};
+    replaceNegative(r);
+    System.out.println("Expected output [[2], [0, 2], [0, 2, 3], [1, 0, 2, 1]]\n actual output; "+ arrToString(r));
+    r = new int[][]{{-1000,-2000,-3000},{-20000},{},{},{0,0,0,0,-90}};
+    replaceNegative(r);
+    System.out.println("Expected output [[1, 0, 0], [0], [], [], [0, 0, 0, 0, 1]]\n actual output; "+ arrToString(r));
   }
 
   public static String arrToString(int[] nums)
@@ -106,7 +121,20 @@ public class ArrayMethods {
     //-When the row number is the same as the column number replace
     //that negative with the value 1
     //-All other negatives replace with 0
-    public static void replaceNegative(int[][] vals){ }
+    public static void replaceNegative(int[][] vals){
+      for (int i=0; i<vals.length; i++){
+        for (int t=0; t<vals[i].length;t++){
+          if (vals[i][t]<0){
+            if(i==t){
+              vals[i][t]=1;
+            }
+            else{
+              vals[i][t]=0;
+            }
+          }
+        }
+      }
+    }
 
     //4. Make a copy of the given 2d array.
     //When testing : make sure that changing the original does NOT change the copy.
