@@ -112,7 +112,7 @@ public class ArrayMethods {
           res = nums[i][t] + res;
         }
       }
-      return res;//place holder return value so it compiles.
+      return res;.
     }
 
     /**Rotate an array by returning a new array with the rows and columns swapped.
