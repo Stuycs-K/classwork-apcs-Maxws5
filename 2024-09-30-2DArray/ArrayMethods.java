@@ -50,19 +50,19 @@ public class ArrayMethods {
     r = new int[][]{{2,3,4},{5,6,7,5,5},{2,4,9}};
     int[][] c = copy(r);
     System.out.println("Expected output [[2, 3, 4], [5, 6, 7, 5, 5], [2, 4, 9]]\n actual output; " + arrToString(c));
-    System.out.println("Expected output false \n real output" + (c == r));
+    System.out.println("Expected output false \n real output " + (c == r));
     r = new int[][]{{},{},{},{}};
     c = copy(r);
     System.out.println("Expected output [[], [], [], []]\n actual output; "+ arrToString(c));
-    System.out.println("Expected output false \n real output" + (c == r));
+    System.out.println("Expected output false \n real output " + (c == r));
     r = new int[][]{{-2,-30,-4},{5,6,7}};
     c = copy(r);
     System.out.println("Expected output [[-2, -30, -4], [5, 6, 7]]\n actual output; "+ arrToString(c));
-    System.out.println("Expected output false \n real output" + (c == r));
+    System.out.println("Expected output false \n real output " + (c == r));
     r = new int[][]{{0}};
     c = copy(r);
     System.out.println("Expected output [[0]]\n actual output; "+ arrToString(c));
-    System.out.println("Expected output false \n real output" + (c == r));
+    System.out.println("Expected output false \n real output " + (c == r));
   }
 
   public static String arrToString(int[] nums)
@@ -158,6 +158,20 @@ public class ArrayMethods {
     //You SHOULD write a helper method for this.
     //If you don't see a good way to do that, you should stop and look at prior methods.
     public static int[][] copy(int[][] nums){
-      return null;//placeholder so it compiles
+      int[][] res = new int[nums.length][];
+      for (int i=0;i<nums.length;i++)
+      {
+        res[i]=returnCopy(nums[i]);
+      }
+      return res;
+    }
+    public static int[] returnCopy(int[] ary)
+    {
+      int[] res = new int[ary.length];
+      for (int i=0;i<ary.length;i++)
+      {
+        res[i]=ary[i];
+      }
+      return res;
     }
 }
