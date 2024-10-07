@@ -10,15 +10,15 @@ public class ArrayDemo{
     r = new int[][]{{0}};
     System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r))));
     r = new int[][]{{},{},{},{}};
-    System.out.println("Expected output 0\n actual output; "+ (countZero2D(r)));
+    System.out.println("Expected output 0\n actual output; "+ (countZeros2D(r)));
     r = new int[][]{{0},{0},{0},{0}};
-    System.out.println("Expected output 4\n actual output; "+ (countZero2D(r)));
+    System.out.println("Expected output 4\n actual output; "+ (countZeros2D(r)));
     r = new int[][]{{-2},{-1},{0},{1}};
-    System.out.println("Expected output 1\n actual output; "+ (countZero2D(r)));
+    System.out.println("Expected output 1\n actual output; "+ (countZeros2D(r)));
     r = new int[][]{{0,0,0,0},{-1,-2,-3},{-3,4,6},{10,20,30}};
-    System.out.println("Expected output 4\n actual output; "+ (countZero2D(r)));
+    System.out.println("Expected output 4\n actual output; "+ (countZeros2D(r)));
     r = new int[][]{{30},{-30},{100000,0},{}};
-    System.out.println("Expected output 1\n actual output; "+ (countZero2D(r)));
+    System.out.println("Expected output 1\n actual output; "+ (countZeros2D(r)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -61,6 +61,11 @@ public class ArrayDemo{
       for (int t = 0; t < nums[i].length; t++)
       {
         if (nums[i][t]==0)
+        {
+          res++;
+        }
+      }
+    }
     return res;
   }
 
