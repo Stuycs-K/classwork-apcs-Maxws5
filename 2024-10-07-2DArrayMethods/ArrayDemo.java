@@ -2,23 +2,33 @@ import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[]args){
     int[][] r = new int[][]{{2,3,4},{5,6,7,5,5},{2,4,9}};
-    System.out.println("Expected output true\n actual output; " + (Arrays.deepToString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; " + (Arrays.deepToString(r).equals(arrToString(r)))+"\n");
     r = new int[][]{{},{},{},{}};
-    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r)))+"\n");
     r = new int[][]{{-2,-30,-4},{5,6,7}};
-    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r)))+"\n");
     r = new int[][]{{0}};
-    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r)))+"\n");
     r = new int[][]{{},{},{},{}};
-    System.out.println("Expected output 0\n actual output; "+ (countZeros2D(r)));
+    System.out.println("Expected output 0\n actual output; "+ (countZeros2D(r))+"\n");
     r = new int[][]{{0},{0},{0},{0}};
-    System.out.println("Expected output 4\n actual output; "+ (countZeros2D(r)));
+    System.out.println("Expected output 4\n actual output; "+ (countZeros2D(r))+"\n");
     r = new int[][]{{-2},{-1},{0},{1}};
-    System.out.println("Expected output 1\n actual output; "+ (countZeros2D(r)));
-    r = new int[][]{{0,0,0,0},{-1,-2,-3},{-3,4,6},{10,20,30}};
-    System.out.println("Expected output 4\n actual output; "+ (countZeros2D(r)));
+    System.out.println("Expected output 1\n actual output; "+ (countZeros2D(r))+"\n");
+    r = new int[][]{{0,0,0},{-1,-2,0},{10,20,30}};
+    System.out.println("Expected output 4\n actual output; "+ (countZeros2D(r))+"\n");
     r = new int[][]{{30},{-30},{100000,0},{}};
-    System.out.println("Expected output 1\n actual output; "+ (countZeros2D(r)));
+    System.out.println("Expected output 1\n actual output; "+ (countZeros2D(r))+"\n");
+    r = new int[][]{{},{},{},{}};
+    System.out.println("Expected output <table><tr></tr><tr></tr><tr></tr><tr></tr></table>\n actual output; "+ (htmlTable(r))+"\n");
+    r = new int[][]{{0},{0},{0},{0}};
+    System.out.println("Expected output <table><tr><td>0</td></tr><tr><td>0</td></tr><tr><td>0</td></tr><tr><td>0</td></tr></table>\n actual output; "+ (htmlTable(r))+"\n");
+    r = new int[][]{{-2},{-1},{0},{1}};
+    System.out.println("Expected output <table><tr><td>-2</td></tr><tr><td>-1</td></tr><tr><td>0</td></tr><tr><td>1</td></tr></table>\n actual output; "+ (htmlTable(r))+"\n");
+    r = new int[][]{{0,0,0,0},{-1,-2,-3},{-3,4,6},{10,20,30}};
+    System.out.println("Expected output <table><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>-1</td><td>-2</td><td>-3</td></tr><tr><td>-3</td><td>4</td><td>6</td></tr><tr><td>10</td><td>20</td><td>30</td></tr></table>\n actual output; "+ (htmlTable(r))+"\n");
+    r = new int[][]{{30},{-30},{100000,0},{}};
+    System.out.println("Expected output <table><tr><td>30</td></tr><tr><td>-30</td></tr><tr><td>100000</td><td>0</td></tr><tr></tr></table>\n actual output; "+ (htmlTable(r))+"\n");
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -165,4 +175,5 @@ public class ArrayDemo{
     }
     res = res + "</table>";
     return res;
+  }
 }
