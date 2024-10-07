@@ -2,13 +2,13 @@ import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[]args){
     int[][] r = new int[][]{{2,3,4},{5,6,7,5,5},{2,4,9}};
-    System.out.println("Expected output true\n actual output; " + (Arrays.toString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; " + (Arrays.deepToString(r).equals(arrToString(r))));
     r = new int[][]{{},{},{},{}};
-    System.out.println("Expected output true\n actual output; "+ (Arrays.toString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r))));
     r = new int[][]{{-2,-30,-4},{5,6,7}};
-    System.out.println("Expected output true\n actual output; "+ (Arrays.toString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r))));
     r = new int[][]{{0}};
-    System.out.println("Expected output true\n actual output; "+ (Arrays.toString(r).equals(arrToString(r))));
+    System.out.println("Expected output true\n actual output; "+ (Arrays.deepToString(r).equals(arrToString(r))));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
