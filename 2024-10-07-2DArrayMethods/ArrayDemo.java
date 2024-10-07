@@ -10,7 +10,17 @@ public class ArrayDemo{
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
-    return "";
+    String res = "[";
+    for (int i = 0; i < nums.length;i++)
+    {
+      res = res + nums[i];
+      if (i < nums.length-1)
+      {
+        res = res + ", ";
+      }
+    }
+    res = res + "]";
+    return res;
   }
 
   //The name of different methods can be the same,
