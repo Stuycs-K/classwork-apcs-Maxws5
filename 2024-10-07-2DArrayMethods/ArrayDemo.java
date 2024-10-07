@@ -1,20 +1,23 @@
 import java.util.Arrays;
 public class ArrayDemo{
   public static void main(String[]args){
-    //write your tests here!
-    //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
-    //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
-    //do not use any other Arrays.method()
-
+    int[][] r = new int[][]{{2,3,4},{5,6,7,5,5},{2,4,9}};
+    System.out.println("Expected output true\n actual output; " + (Arrays.toString(r).equals(arrToString(r))));
+    r = new int[][]{{},{},{},{}};
+    System.out.println("Expected output true\n actual output; "+ (Arrays.toString(r).equals(arrToString(r))));
+    r = new int[][]{{-2,-30,-4},{5,6,7}};
+    System.out.println("Expected output true\n actual output; "+ (Arrays.toString(r).equals(arrToString(r))));
+    r = new int[][]{{0}};
+    System.out.println("Expected output true\n actual output; "+ (Arrays.toString(r).equals(arrToString(r))));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
     String res = "[";
-    for (int i = 0; i < nums.length;i++)
+    for (int i = 0; i < ary.length;i++)
     {
-      res = res + nums[i];
-      if (i < nums.length-1)
+      res = res + ary[i];
+      if (i < ary.length-1)
       {
         res = res + ", ";
       }
@@ -48,7 +51,7 @@ public class ArrayDemo{
   //2. Calculate the sum of a 2d array
   /*Return the sum of all of the values in the 2D array
    *Use a nested loop instead of a helper method*/
-   public static int arr2DSum(int[][]nums){
+   public static int arr2DSum(int[][] nums){
      int res = 0;
      for (int i = 0; i < nums.length; i++)
      {
@@ -57,7 +60,7 @@ public class ArrayDemo{
          res = nums[i][t] + res;
        }
      }
-     return res;.
+     return res;
    }
 
   //3. Modify a given 2D array of integer as follows:
