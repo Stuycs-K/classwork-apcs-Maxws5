@@ -29,5 +29,11 @@ public class Demo{
     Point t2 = new Point(1, 0);
     //Point t3 = new Point((t1.getX + t2.getX) / 2, Math.sqrt())
     Point t3 = new Point(0.5, Math.sqrt(0.75));
+    System.out.println("t1: " + t1);
+    System.out.println("t2: " + t2);
+    System.out.println("t3: " + t3);
+    System.out.println("Distance from t1 to t2: " + distance(t1,t2));
+    System.out.println("Distance from t2 to t3: " + distance(t3,t2));
+    System.out.println("Distance from t1 to t3: " + distance(t1,t3));
   }
 }
