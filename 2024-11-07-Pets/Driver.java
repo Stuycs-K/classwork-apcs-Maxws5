@@ -7,5 +7,9 @@ public class Driver{
     toucan.speak();
     Bird LennyJr = new Bird("SQUACK", 2, "Lenny Jr", 10.5, "rainbow");
     LennyJr.speak();
+    Animal a1 = new Animal("a1", 5, "Lennster");
+    Bird b1 = new Bird("a2", 2, "Lenny Sr", 100, "black");
+    //Bird b2 = new Animal("a3", 90, "Len");
+    Animal a2 = new Bird("a4", 3456, "Lennington", 1, "white");
   }
 }
