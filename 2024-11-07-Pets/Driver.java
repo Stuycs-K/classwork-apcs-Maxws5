@@ -14,5 +14,8 @@ public class Driver{
     Bird b1 = new Bird("a2", 2, "Lenny Sr", 100, "black");
     //Bird b2 = new Animal("a3", 90, "Len");
     Animal a2 = new Bird("a4", 3456, "Lennington", 1, "white");
+    a1.speak();
+    b1.speak();
+    a2.speak();
   }
 }
