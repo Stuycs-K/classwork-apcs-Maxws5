@@ -1,6 +1,9 @@
 /* When calling .speak() with the Bird object, it accesses the overriden version of getName(),
    instead of the original getName() in the Animal Class. However if you call the .speak() method
    with an Animal object, it will use the original getName(). */
+/* Any class that is-A another class, will work when being compiled into that class.
+Animal is-A Animal; Bird is-A Bird; Bird is-A Animal; but Animal is not a Bird.
+*/
 public class Driver{
   public static void main(String[] args){
     Animal toucan = new Animal("squack", 5, "Lenny");
