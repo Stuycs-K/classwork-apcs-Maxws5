@@ -6,7 +6,7 @@ public class ArrayListPractice{
     {
       double tem = 11*Math.random();
       int temp = (int)(tem);
-      System.out.println(tem);
+      //System.out.println(tem);
       res.add("" + temp);
       if (res.get(i).equals("0"))
       {
@@ -30,6 +30,7 @@ public class ArrayListPractice{
   {
     ArrayList<String> test1 = createRandomArray((int)(12*Math.random()));
     System.out.println(createRandomArray(5));
+    System.out.println(test1);
     replaceEmpty(test1);
     System.out.println(test1);
   }
