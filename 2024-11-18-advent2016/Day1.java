@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 
-public class Driver{
+public class Day1{
   public static String[] work(String filename){
     try {
       File newFile = new File (filename);
