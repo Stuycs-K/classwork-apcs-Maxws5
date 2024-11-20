@@ -54,23 +54,58 @@ public class Day1{
       int move = Integer.parseInt(input[i].substring(1));
       if (lor.equals("R")) direct += 1;
       else direct -= 1;
+      boolean repeat = false;
       if (direct==-1) direct = 3;
       if (direct == 5)direct = 1;
-      if (direct%4==0)North+=move;
-      if (direct%4==1)East+=move;
-      if (direct%4==2)South+=move;
-      if (direct%4==3)West+=move;
-      boolean repeat = false;
-      for (int b = 0; b < locations.size(); b++){
-        if (North-South == locations.get(b)[0] && East-West == locations.get(b)[1]) repeat = true;
+      if (direct%4==0){
+        for (int c = 0; c < move; c++)
+        {
+          North++;
+          for (int b = 0; b < locations.size(); b++){
+            if (North-South == locations.get(b)[0] && East-West == locations.get(b)[1]) repeat = true;
+          }
+          if (repeat) return Math.abs(North-South) + Math.abs(East-West);
+          else locations.add(new int[] {North-South, East-West});
+        }
       }
-      if (repeat) return Math.abs(North-South) + Math.abs(East-West);
-      else locations.add(new int[] {North-South, East-West});
+      if (direct%4==1){
+        for (int c = 0; c < move; c++)
+        {
+          East++;
+          for (int b = 0; b < locations.size(); b++){
+            if (North-South == locations.get(b)[0] && East-West == locations.get(b)[1]) repeat = true;
+          }
+          if (repeat) return Math.abs(North-South) + Math.abs(East-West);
+          else locations.add(new int[] {North-South, East-West});
+        }
+      }
+      if (direct%4==2){
+        for (int c = 0; c < move; c++)
+        {
+          South++;
+          for (int b = 0; b < locations.size(); b++){
+            if (North-South == locations.get(b)[0] && East-West == locations.get(b)[1]) repeat = true;
+          }
+          if (repeat) return Math.abs(North-South) + Math.abs(East-West);
+          else locations.add(new int[] {North-South, East-West});
+        }
+      }
+      if (direct%4==3){
+        for (int c = 0; c < move; c++)
+        {
+          West++;
+          for (int b = 0; b < locations.size(); b++){
+            if (North-South == locations.get(b)[0] && East-West == locations.get(b)[1]) repeat = true;
+          }
+          if (repeat) return Math.abs(North-South) + Math.abs(East-West);
+          else locations.add(new int[] {North-South, East-West});
+        }
+      }
     }
     int res = Math.abs(North-South) + Math.abs(East-West);
     return res;
   }
   public static void main(String[] args){
-    System.out.println(work3(work("test.txt")));
+    System.out.println(work3(work("advent.txt")));
   }
 }
