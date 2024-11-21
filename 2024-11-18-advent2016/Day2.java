@@ -2,29 +2,37 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 
 public class Day2{
-  public static String[] work(String filename){
+  public static ArrayList<String> work(String filename){
     try {
       File newFile = new File (filename);
       Scanner temp = new Scanner(newFile);
-      String temp2 = temp.nextLine();
-      //System.out.println(temp2);
-      String[] input = temp2.split("\n");
-      return input;
+      ArrayList<String> res = new ArrayList<String>(1);
+      while (temp.hasNextLine())
+      {
+        res.add(temp.nextLine());
+      }
+      return res;
     }
     catch (FileNotFoundException ex) {
       System.out.println("File not found");
-      String[] idk = new String[8];
+      ArrayList<String> idk = new ArrayList<String>(1);
       return idk;
     }
-    public static String work2(String[] lines){
-      String res = "";
-      String[][] keypad = [[1,2,3],[4,5,6],[7,8,9]];
-      for (int i = 0; i < lines.length;i++){
-        res = res +"1";
-      }
+  }
+  public static String work2(ArrayList<String> lines){
+    String res = "";
+    //System.out.println(Arrays.toString(lines));
+    String[][] keypad = {{"1","2","3"},{"4","5","6"},{"7","8","9"}};
+    for (int i = 0; i < lines.size();i++){
+      res = res +"1";
     }
     return res;
   }
+  public static void main(String[] args){
+    System.out.println(work2(work("advent.txt")));
+  }
+}
