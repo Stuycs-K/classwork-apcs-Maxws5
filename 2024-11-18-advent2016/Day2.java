@@ -25,10 +25,30 @@ public class Day2{
   }
   public static String work2(ArrayList<String> lines){
     String res = "";
-    //System.out.println(Arrays.toString(lines));
     String[][] keypad = {{"1","2","3"},{"4","5","6"},{"7","8","9"}};
+    int xpos = 1;
+    int ypos = 1;
     for (int i = 0; i < lines.size();i++){
-      res = res +"1";
+      for (int b = 0; b < lines.get(i).length();b++)
+      {
+        if ((lines.get(i).substring(b,b+1).equals("L"))&&(xpos>0)){
+          xpos--;
+          System.out.println(keypad[ypos][xpos]);
+        }
+        if ((lines.get(i).substring(b,b+1).equals("R"))&&(xpos<2)){
+          xpos++;
+          System.out.println(keypad[ypos][xpos]);
+        }
+        if ((lines.get(i).substring(b,b+1).equals("U"))&&(ypos<2)){
+          ypos++;
+          System.out.println(keypad[ypos][xpos]);
+        }
+        if ((lines.get(i).substring(b,b+1).equals("D"))&&(ypos>0)){
+          ypos--;
+          System.out.println(keypad[ypos][xpos]);
+        }
+      }
+      res = res + keypad[ypos][xpos];
     }
     return res;
   }
