@@ -25,7 +25,7 @@ public class Day2{
   }
   public static String work2(ArrayList<String> lines){
     String res = "";
-    String[][] keypad = {{"1","2","3"},{"4","5","6"},{"7","8","9"}};
+    String[][] keypad = {{"1"},{"2","3","4"},{"5","6","7","8","9"},{"A","B","C"},{"D"}};
     int xpos = 1;
     int ypos = 1;
     for (int i = 0; i < lines.size();i++){
