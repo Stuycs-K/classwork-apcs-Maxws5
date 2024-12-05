@@ -38,7 +38,7 @@ public static void color(int m){
   System.out.print ("\033[;" + m + "m");
 }
 public static void color(int m1, int m2){
-  System.out.print ("\033["+ m1 + ";" + m2 + "m");
+  System.out.print("\033["+ m1 + ";" + m2 + "m");
 }
 public static void color(int m1, int m2, int m3){
   System.out.print ("\033["+ m1 + ";" + m2 + ";" + m3 + "m");
