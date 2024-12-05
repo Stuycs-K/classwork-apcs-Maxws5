@@ -9,37 +9,60 @@ public class Driver{
   public static final int MAGENTA = 35;
   public static final int CYAN = 36;
   public static final int WHITE = 37;
-  public static void main(String[] args){
-    border(RED);
-    int[] test = randArray();
-    System.out.print(Arrays.toString(test));
-  }
-
-
-  public static void border(int color){
-    Text.color(color,Text.background(color));
-    for (int i =0; i < 80;i++){
-      System.out.print(" ");
-    }
-    System.out.println(Text.RESET);
-    for (int i = 0;i<30;i++){
-      Text.color(color,Text.background(color));
-      System.out.print(" ");
+  public static void main(String[] args) {
+      System.out.print(Text.CLEAR_SCREEN);
+      System.out.print(Text.HIDE_CURSOR);
+      int[] test = randArray();
+      border(CYAN);
+      addInt(test, CYAN);
+      System.out.print(Text.SHOW_CURSOR);
       System.out.print(Text.RESET);
-      for (int b = 0; b <78;b++){
-        System.out.print(" ");
-      }
-      Text.color(color,Text.background(color));
-      System.out.print(" ");
-      System.out.println(Text.RESET);
-    }
-    Text.color(color,Text.background(color));
-    for (int i =0; i < 79;i++){
-      System.out.print(" ");
-    }
-    System.out.println(Text.RESET);
+      Text.go(31, 1);
   }
 
+  public static void border(int color) {
+      for (int col = 1; col <= 80; col++) {
+          Text.go(1, col);
+          Text.color(color, Text.background(color));
+          System.out.print(" ");
+          Text.go(30, col);
+          System.out.print(" ");
+      }
+      for (int row = 2; row <= 29; row++) {
+          Text.go(row, 1);
+          System.out.print(" ");
+          Text.go(row, 80);
+          System.out.print(" ");
+      }
+      for (int row = 2; row <= 29; row++) {
+          for (int col = 2; col <= 79; col++) {
+              Text.go(row, col);
+              Text.color(BLACK, Text.background(Text.BLACK));
+              System.out.print(" ");
+          }
+      }
+  }
+
+  public static void addInt (int[] arr, int color) {
+      int spacing = 20;
+      int startCol = 10;
+      for (int i = 0; i < arr.length; i++) {
+          Text.go(2, startCol + i * spacing);
+          if (arr[i] < 25) {
+              Text.color(RED, Text.background(Text.BLACK));
+          } else if (arr[i] > 75) {
+              Text.color(GREEN, Text.background(Text.BLACK));
+          } else {
+              Text.color(WHITE, Text.background(Text.BLACK));
+          }
+          System.out.printf("%02d", arr[i]);
+      }
+      Text.color(color, Text.background(Text.BLACK));
+      for (int col = 2; col <= 79; col++) {
+          Text.go(3, col);
+          System.out.print("-");
+      }
+    }
 
   public static int[] randArray(){
     int[] res = new int[3];
