@@ -1,3 +1,5 @@
+import java.util.Random;
+import java.util.Arrays;
 public class Driver{
   public static final int BLACK = 30;
   public static final int RED = 31;
@@ -9,7 +11,11 @@ public class Driver{
   public static final int WHITE = 37;
   public static void main(String[] args){
     border(RED);
+    int[] test = randArray();
+    System.out.print(Arrays.toString(test));
   }
+
+
   public static void border(int color){
     Text.color(color,Text.background(color));
     for (int i =0; i < 80;i++){
@@ -31,6 +37,15 @@ public class Driver{
     for (int i =0; i < 79;i++){
       System.out.print(" ");
     }
+    System.out.println(Text.RESET);
   }
-  public 
+
+
+  public static int[] randArray(){
+    int[] res = new int[3];
+    res[0]=(int)(Math.random()*100.0);
+    res[1]=(int)(Math.random()*100.0);
+    res[2]=(int)(Math.random()*100.0);
+    return res;
+  }
 }
