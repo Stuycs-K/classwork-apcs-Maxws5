@@ -2,7 +2,14 @@ import java.util.Scanner;
 import java.util.Random;
 public class Game{
   public static void main(String[] args){
-    Adventurer tester = new EagleFan(args[0],10, 3);
+    Adventurer tester;
+    if(args.length==1){
+      tester = new EagleFan(args[0],10, 3);
+    }
+    else{
+      tester = new EagleFan("Abraham Lincoln",10, 3);
+    }
+
     Adventurer tester2 = new CodeWarrior("Robert E. Lee",10);
     boolean done = false;
     Scanner userInput = new Scanner(System.in);
