@@ -54,13 +54,15 @@ public class EagleFan extends Adventurer{
 
   //heall or buff self
   public String support(){
-    this.applyDamage(-1);
+    this.applyDamage(-2);
+    this.restoreSpecial(1);
     return(this+" drank a magical elixer");
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other){
     other.applyDamage(3);
+    other.restoreSpecial(-1);
     this.setSpecial(this.getSpecial()-1);
     return(this+" rubbed the dub in "+other.getName()+"'s face'");
   }
