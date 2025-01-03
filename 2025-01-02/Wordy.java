@@ -1,6 +1,6 @@
 public class Wordy{
   public static void main(String[] args){
-    makeWords(3,"","abcdefghijklmnopqrstuvwxyz");
+    makeWords(10,"","a");
   }
   public static void makeWords(int letters, String soFar, String alpha){
     if (letters==0){
@@ -11,5 +11,8 @@ public class Wordy{
         makeWords(letters-1,soFar+alpha.substring(i,i+1),alpha);
       }
     }
+  }
+  public static String toWords(int num){
+    if (num.length
   }
 }
