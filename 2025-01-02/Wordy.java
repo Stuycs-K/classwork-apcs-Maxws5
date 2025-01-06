@@ -12,7 +12,4 @@ public class Wordy{
       }
     }
   }
-  public static String toWords(int num){
-    if (num.length
-  }
 }
